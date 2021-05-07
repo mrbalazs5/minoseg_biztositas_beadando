@@ -1,0 +1,62 @@
+package test;
+
+import main.Application;
+import main.Component;
+import main.ComponentConnection;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
+import java.util.ArrayList;
+import java.util.List;;
+
+class ApplicationTest {
+
+    List<Component> inputComponents;
+    List<ComponentConnection> inputConnections;
+
+    List<Component> inputErroneousComponents;
+    List<ComponentConnection> inputErroneousConnections;
+
+    List<Component> inputReplacementComponents;
+    List<ComponentConnection> inputReplacementConnections;
+
+    Application app = new Application();
+
+    @BeforeAll
+    static void initAll() {
+	app.parseComponentInputFile("inputs/GI0.in", inputComponents,
+		inputConnections);
+	app.parseComponentInputFile("inputs/GC0.in", inputErroneousComponents,
+		inputErroneousConnections);
+	app.parseComponentInputFile("inputs/GR0.in", inputReplacementComponents,
+		inputReplacementConnections);
+    }
+
+    @Test
+    void createOutputFileContentTest() {
+	int numReplacements = 5;
+	List<List<ComponentConnection>> matchedErroneousComponents = new ArrayList<List<ComponentConnection>>();
+
+	String stringOutput1 = app.createOutputFileContent(numReplacements,
+		matchedErroneousComponents);
+	String stringOutput2 = app.createOutputFileContent(numReplacements,
+		matchedErroneousComponents);
+
+	int parsedNumReplacements = Integer
+		.parseInt(stringOutput1.split("\n")[0]);
+
+	assertNotNull(stringOutput1);
+	assertEquals(stringOutput1, stringOutput2);
+
+	assertEquals(parsedNumReplacements, numReplacements);
+    }
+
+    @Test
+    void countComponentReplacementsTest() {
+
+    }
+
+}

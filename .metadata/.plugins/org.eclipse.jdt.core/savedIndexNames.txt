@@ -1,0 +1,17 @@
+INDEX VERSION 1.131+D:\university\minoseg_bizt\beadando\.metadata\.plugins\org.eclipse.jdt.core
+3782204133.index
+3788045851.index
+3451413675.index
+34438537.index
+2196199803.index
+814421160.index
+4284826882.index
+3163345828.index
+2326913134.index
+1482097900.index
+3444144423.index
+1283798977.index
+3511717306.index
+307167639.index
+1913432394.index
+1902632634.index

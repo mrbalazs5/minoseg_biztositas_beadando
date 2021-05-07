@@ -1,0 +1,23 @@
+/*
+ * ComponentTest
+ *
+ * v1.0
+ *
+ * 2021.04.05
+ *
+ */
+
+package test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class ComponentTest {
+
+    @Test
+    void test() {
+	fail("Not yet implemented");
+    }
+
+}
